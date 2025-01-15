@@ -33,18 +33,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void level1(View view) {
-        num1.setText(String.valueOf(random(0,11)));
-        num2.setText(String.valueOf(random(0,11)));
+        num1.setText(String.valueOf(random(0,9)));
+        num2.setText(String.valueOf(random(0,9)));
     }
 
     public void level2(View view) {
-        num1.setText(String.valueOf(random(0,11)));
-        num2.setText(String.valueOf(random(10,101)));
+        num1.setText(String.valueOf(random(0,9)));
+        num2.setText(String.valueOf(random(10,99)));
     }
 
     public void level3(View view) {
-        num1.setText(String.valueOf(random(10,101)));
-        num2.setText(String.valueOf(random(10,101)));
+        num1.setText(String.valueOf(random(10,99)));
+        num2.setText(String.valueOf(random(10,99)));
     }
 
     public int random (int n1,int n2){
@@ -54,21 +54,25 @@ public class MainActivity extends AppCompatActivity {
 
     public void ch_answer(View view) {
         if (!(num1.getText().toString().isEmpty() || num2.getText().toString().isEmpty() || answer.getText().toString().isEmpty())) {
-            double userAnswer = Double.parseDouble(answer.getText().toString());
-            double correctAnswer = Integer.parseInt(num1.getText().toString())*Integer.parseInt(num2.getText().toString());
-            InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-            if (userAnswer==correctAnswer) {
+            int userAnswer = Integer.parseInt(answer.getText().toString());
+            int n1=Integer.parseInt(num1.getText().toString()),n2=Integer.parseInt(num2.getText().toString());
+            if (userAnswer==n1*n2) {
                 Toast.makeText(this, "أحسنت", Toast.LENGTH_SHORT).show();
                 t++;
                 calct.setText(String.valueOf(t));
             } else {
                 Toast.makeText(this, "خطأ", Toast.LENGTH_SHORT).show();
                 f++;
-                calct.setText(String.valueOf(f));
+                calcf.setText(String.valueOf(f));
             }
         }
         else
-            Toast.makeText(this, "يجب ادخال الاجابة وتوليد ارقام", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "يجب ادخال الاجابة واختيار مستوى", Toast.LENGTH_SHORT).show();
+        reset(view);
+    }
+    public void reset(View view){
+        num1.setText("");
+        num2.setText("");
+        answer.setText("");
     }
 }
