@@ -10,11 +10,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/calcf"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -28,6 +29,7 @@
             android:textSize="35sp" />
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/calct"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -48,33 +50,40 @@
         android:orientation="horizontal">
 
         <Button
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/black"
             android:id="@+id/lv1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#008e9b"
             android:onClick="level1"
-            android:text="Level: 1"
+            android:text="Level:1"
             android:textSize="20sp" />
 
         <Button
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/black"
             android:id="@+id/lv2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#008e9b"
             android:onClick="level2"
-            android:text="Level: 2"
+            android:text="Level:2"
             android:textSize="20sp" />
 
         <Button
+            android:layout_marginRight="5dp"
+            android:textColor="@color/black"
             android:id="@+id/lv3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#008e9b"
             android:onClick="level3"
-            android:text="Level: 3"
+            android:text="Level:3"
             android:textSize="20sp" />
     </LinearLayout>
 
@@ -88,6 +97,8 @@
         android:layout_gravity="center_horizontal">
 
         <TextView
+
+            android:textColor="@color/black"
             android:id="@+id/n1"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -98,6 +109,7 @@
             android:layout_marginBottom="15dp" />
 
         <TextView
+            android:textColor="@color/black"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:background="#b39cd0"
@@ -108,6 +120,7 @@
             android:layout_marginBottom="15dp" />
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/n2"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -118,6 +131,7 @@
     </LinearLayout>
 
     <EditText
+        android:textColorHint="@color/black"
         android:id="@+id/answer"
         android:layout_width="200dp"
         android:layout_height="70dp"
@@ -133,6 +147,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
+        android:backgroundTint="#b39cd0"
+        android:textColor="@color/black"
         android:onClick="ch_answer"
         android:text="Check"
         android:textSize="40sp" />

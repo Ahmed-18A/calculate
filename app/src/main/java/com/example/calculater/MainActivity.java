@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     EditText answer;
     TextView calcf,calct;
     int t=0,f=0;
+    boolean l1=false,l2=false,l3=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,16 +36,25 @@ public class MainActivity extends AppCompatActivity {
     public void level1(View view) {
         num1.setText(String.valueOf(random(0,9)));
         num2.setText(String.valueOf(random(0,9)));
+        l1=true;
+        l2=false;
+        l3=false;
     }
 
     public void level2(View view) {
         num1.setText(String.valueOf(random(0,9)));
         num2.setText(String.valueOf(random(10,99)));
+        l1=false;
+        l2=true;
+        l3=false;
     }
 
     public void level3(View view) {
         num1.setText(String.valueOf(random(10,99)));
         num2.setText(String.valueOf(random(10,99)));
+        l1=false;
+        l2=false;
+        l3=true;
     }
 
     public int random (int n1,int n2){
@@ -60,19 +70,22 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "أحسنت", Toast.LENGTH_SHORT).show();
                 t++;
                 calct.setText(String.valueOf(t));
-            } else {
+            }
+            else {
                 Toast.makeText(this, "خطأ", Toast.LENGTH_SHORT).show();
                 f++;
                 calcf.setText(String.valueOf(f));
             }
+            if (l1)
+                level1(view);
+            else
+            if(l2)
+                level2(view);
+            else
+                level3(view);
         }
         else
             Toast.makeText(this, "يجب ادخال الاجابة واختيار مستوى", Toast.LENGTH_SHORT).show();
-        reset(view);
-    }
-    public void reset(View view){
-        num1.setText("");
-        num2.setText("");
         answer.setText("");
     }
 }
